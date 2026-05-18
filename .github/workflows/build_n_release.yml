@@ -24,6 +24,10 @@ jobs:
             echo "tag=$tag" >> $GITHUB_OUTPUT
           fi
 
+      - name: Set zip name
+        id: zip_name
+        run: echo "name=${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip" >> $GITHUB_OUTPUT
+        
       - name: Create zip
         run: zip ${{ steps.zip_name.outputs.name }} TEMPLATE.sh
 
@@ -35,3 +39,6 @@ jobs:
           make_latest: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+

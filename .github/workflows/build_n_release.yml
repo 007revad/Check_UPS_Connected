@@ -24,12 +24,18 @@ jobs:
             echo "tag=$tag" >> $GITHUB_OUTPUT
           fi
 
+      - name: Debug
+        run: ls -la
+
       - name: Create zip
         id: create_zip
         run: |
           zip_name="${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip"
           echo "name=$zip_name" >> $GITHUB_OUTPUT
           zip "$zip_name" TEMPLATE.sh
+
+      - name: Debug2
+        run: ls -la
 
       - name: Upload zip to release
         uses: softprops/action-gh-release@v2

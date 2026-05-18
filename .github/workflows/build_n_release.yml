@@ -24,18 +24,18 @@ jobs:
             echo "tag=$tag" >> $GITHUB_OUTPUT
           fi
 
-      - name: Set zip name
-        id: zip_name
-        run: echo "name=${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip" >> $GITHUB_OUTPUT
-        
       - name: Create zip
-        run: zip ${{ steps.zip_name.outputs.name }} TEMPLATE.sh
+        id: create_zip
+        run: |
+          zip_name="${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip"
+          echo "name=$zip_name" >> $GITHUB_OUTPUT
+          zip "$zip_name" TEMPLATE.sh
 
       - name: Upload zip to release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.get_tag.outputs.tag }}
-          files: ${{ steps.zip_name.outputs.name }}
+          files: ${{ steps.create_zip.outputs.name }}
           make_latest: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

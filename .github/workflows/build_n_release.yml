@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Get release tag
         id: get_tag
         run: |
@@ -22,14 +23,15 @@ jobs:
               | jq -r .tag_name)
             echo "tag=$tag" >> $GITHUB_OUTPUT
           fi
+
       - name: Create zip
-        run: |
-          zip ${{ github.event.repository.name }}.zip TEMPLATE.sh
+        run: zip ${{ steps.zip_name.outputs.name }} TEMPLATE.sh
+
       - name: Upload zip to release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.get_tag.outputs.tag }}
-          files: ${{ github.event.repository.name }}.zip
+          files: ${{ steps.zip_name.outputs.name }}
           make_latest: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

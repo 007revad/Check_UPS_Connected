@@ -1,4 +1,4 @@
-# <img src="images/icon.png" width="40"> Check UPS Connected
+# Check UPS Connected
 
 <a href="https://github.com/007revad/Check_UPS_Connected/releases"><img src="https://img.shields.io/github/release/007revad/Check_UPS_Connected.svg"></a>
 [![Github Releases](https://img.shields.io/github/downloads/007revad/Check_UPS_Connected/total.svg)](https://github.com/007revad/Check_UPS_Connected/releases)
@@ -9,11 +9,13 @@
 
 ### Description
 
-Description goes here
+DSM 7.3.2 seems to have a bug where it does not send an email or set a desktop notification if the UPS is not connected. So I wrote this script to check if my Synology NAS is connected to the UPS server.
+
+I have it scheduled to run once a day on each Synology NAS that is an UPS client.
 
 ### Download the script
 
-1. Download the latest version _Source code (zip)_ from https://github.com/007revad/Check_UPS_Connected/releases
+1. Download the latest version zip file from https://github.com/007revad/Check_UPS_Connected/releases
 2. Save the download zip file to a folder on the Synology.
 3. Unzip the zip file.
 

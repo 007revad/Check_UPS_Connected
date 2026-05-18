@@ -1,14 +1,18 @@
-name: Build n Release
+name: Build n Release Zip
+
 on:
   release:
     types: [published]
   workflow_dispatch:
+
 jobs:
   build-zip:
     name: Build zip
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4

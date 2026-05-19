@@ -9,9 +9,11 @@
 
 ### Description
 
-DSM 7.3.2 seems to have a bug where it does not send an email or set a desktop notification if the UPS is not connected. So I wrote this script to check if my Synology NAS is connected to the UPS server.
+DSM 7.3.2 seems to have a bug where it does not send an email, or set a desktop notification, if the UPS is not connected.
 
-I have it scheduled to run once a day on each Synology NAS that is an UPS client.
+I have it scheduled to run once a day on each Synology NAS that is an UPS client, or has an UPS directly connected.
+
+The script works in DSM 7 and DSM 6.
 
 ### Download the script
 
@@ -50,10 +52,20 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<!--- <p align="center">Description of image 1 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<p align="center">Email from USP server</p>
+<p align="center"><img src="/images/ups_server_email.png"></p>
 
 <br>
 
-<!--- <p align="center">Description of image 2 goes here</p> --->
-<p align="center"><img src="/images/IMAGE_NAME.png"></p>
+<p align="center">Email from UPS client</p>
+<p align="center"><img src="/images/ups_client_email.png"></p>
+
+<br>
+
+<p align="center">SSH result from USP server</p>
+<p align="center"><img src="/images/ups_server_ssh.png"></p>
+
+<br>
+
+<p align="center">SSH result from UPS client</p>
+<p align="center"><img src="/images/ups_client_ssh.png"></p>

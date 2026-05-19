@@ -1,5 +1,5 @@
 v1.0.1
-- Now checks local USB/Serial connnected UPS as well as client/server UPS.
+- Now checks local USB/Serial connected UPS as well as client/server UPS.
 - Improved UPS status messages. 
 
 v1.0.0

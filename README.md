@@ -52,20 +52,20 @@ If the script won't run check the following:
 
 ### Screenshots
 
-<p align="center">Email from USP server</p>
+<p align="center">Email from Synology with UPS connected via USB/Serial</p>
 <p align="center"><img src="/images/ups_server_email.png"></p>
 
 <br>
 
-<p align="center">Email from UPS client</p>
+<p align="center">Email from Synology UPS client</p>
 <p align="center"><img src="/images/ups_client_email.png"></p>
 
 <br>
 
-<p align="center">SSH result from USP server</p>
+<p align="center">SSH result from Synology with UPS connected via USB/Serial</p>
 <p align="center"><img src="/images/ups_server_ssh.png"></p>
 
 <br>
 
-<p align="center">SSH result from UPS client</p>
+<p align="center">SSH result from Synology UPS client</p>
 <p align="center"><img src="/images/ups_client_ssh.png"></p>
